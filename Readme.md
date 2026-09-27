@@ -16,6 +16,8 @@ npm start        # build and run
 npm run package  # build a portable .exe (Windows) and a .tar.gz (Linux) into release/
 ```
 
+Precompiled binaries for Windows & Linux are also available via Github Actions.
+
 ## Configuration
 
 Settings are stored in `config.json` in the user profile (`%APPDATA%\webclient\config.json`):
