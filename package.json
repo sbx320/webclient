@@ -1,0 +1,37 @@
+{
+  "name": "webclient",
+  "version": "1.0.0",
+  "description": "Electron wrapper for Guacamole",
+  "main": "dist/main.js",
+  "type": "module",
+  "scripts": {
+    "start": "npm run build && electron .",
+    "build": "node-gyp configure && node-gyp build && tsc -p tsconfig.json",
+    "package": "npm run build && electron-builder --win portable --linux tar.gz"
+  },
+  "author": "sbx320",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/bindings": "^1.5.0",
+    "@types/node": "^22.0.0",
+    "electron": "^39.2.6",
+    "electron-builder": "^26.0.12",
+    "node-gyp": "^12.1.0",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "bindings": "^1.5.0",
+    "node-addon-api": "^8.5.0"
+  },
+  "build": {
+    "appId": "sbx320.webclient",
+    "productName": "webclient",
+    "npmRebuild": false,
+    "directories": {
+      "output": "release"
+    },
+    "asarUnpack": [
+      "build/Release/*.node"
+    ]
+  }
+}
